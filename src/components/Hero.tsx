@@ -21,6 +21,18 @@ const Hero = () => {
 
       <div className="text-center z-10 px-4">
         <div className="animate-fade-in">
+          {/* Professional Photo */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/e7752c66-0fbf-4853-b8f8-010318ae68a6.png" 
+                alt="Asif Hossain - Data Analysis Expert"
+                className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-purple-400/50 shadow-2xl animate-fade-in"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-pink-500/20"></div>
+            </div>
+          </div>
+
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Asif</span>
           </h1>

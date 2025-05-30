@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -39,6 +39,11 @@ const Contact = () => {
       ...prev,
       [e.target.name]: e.target.value
     }));
+  };
+
+  const handleWhatsAppClick = () => {
+    const whatsappUrl = `https://wa.me/8801630521697?text=Hi%20Asif,%20I%20would%20like%20to%20discuss%20a%20data%20analysis%20project%20with%20you.`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -81,7 +86,22 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">Phone</h4>
-                  <p className="text-gray-400">Available upon request</p>
+                  <p className="text-gray-400">+8801630521697</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4 animate-fade-in animation-delay-500">
+                <div className="bg-green-500/20 p-3 rounded-lg">
+                  <MessageCircle className="w-6 h-6 text-green-400" />
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold">WhatsApp</h4>
+                  <button 
+                    onClick={handleWhatsAppClick}
+                    className="text-green-400 hover:text-green-300 transition-colors"
+                  >
+                    +8801630521697
+                  </button>
                 </div>
               </div>
 
@@ -93,6 +113,17 @@ const Contact = () => {
                   <h4 className="text-white font-semibold">Location</h4>
                   <p className="text-gray-400">Available for remote work worldwide</p>
                 </div>
+              </div>
+
+              {/* WhatsApp Button */}
+              <div className="pt-4">
+                <button
+                  onClick={handleWhatsAppClick}
+                  className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-green-500/25"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Chat on WhatsApp
+                </button>
               </div>
             </div>
           </div>
