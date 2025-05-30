@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ChevronDown, Linkedin, Github, Facebook, Briefcase } from 'lucide-react';
+import { ChevronDown, Linkedin, Github, Facebook, Briefcase, Download } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSkills = () => {
@@ -10,8 +10,19 @@ const Hero = () => {
     }
   };
 
+  const downloadResume = () => {
+    // You can replace this URL with your actual resume file
+    const resumeUrl = '/resume.pdf';
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Asif_Hossain_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -23,12 +34,13 @@ const Hero = () => {
         <div className="animate-fade-in">
           {/* Professional Photo */}
           <div className="mb-8 flex justify-center">
-            <div className="relative">
+            <div className="relative group">
               <img 
                 src="/lovable-uploads/e7752c66-0fbf-4853-b8f8-010318ae68a6.png" 
                 alt="Asif Hossain - Data Analysis Expert"
-                className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-2xl mx-auto"
+                className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-2xl mx-auto transition-all duration-300 group-hover:scale-105 group-hover:shadow-purple-500/25"
               />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           </div>
 
@@ -84,6 +96,13 @@ const Hero = () => {
               className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
             >
               View My Work
+            </button>
+            <button 
+              onClick={downloadResume}
+              className="px-8 py-3 bg-green-600 text-white rounded-full font-semibold hover:bg-green-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-green-600/25 flex items-center gap-2"
+            >
+              <Download className="w-4 h-4" />
+              Download Resume
             </button>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
