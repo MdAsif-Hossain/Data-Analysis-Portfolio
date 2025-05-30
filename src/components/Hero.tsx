@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Linkedin, Github } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSkills = () => {
@@ -27,10 +27,29 @@ const Hero = () => {
               <img 
                 src="/lovable-uploads/e7752c66-0fbf-4853-b8f8-010318ae68a6.png" 
                 alt="Asif Hossain - Data Analysis Expert"
-                className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-purple-400/50 shadow-2xl animate-fade-in"
+                className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-2 border-gray-300 shadow-lg"
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-pink-500/20"></div>
             </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex justify-center gap-4 mb-6">
+            <a
+              href="https://www.linkedin.com/in/md-asif-hossain20/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-blue-600/25"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="https://github.com/MdAsif-Hossain"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-gray-800/25"
+            >
+              <Github className="w-6 h-6" />
+            </a>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">

@@ -9,28 +9,14 @@ const Certificates = () => {
       issuer: "Google",
       date: "2024",
       image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=300&h=200&fit=crop",
-      credentialId: "ABC123456"
+      credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/2ZF06XQSNIVK?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof"
     },
     {
-      title: "Microsoft Certified: Azure Data Scientist Associate",
-      issuer: "Microsoft",
-      date: "2023",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=200&fit=crop",
-      credentialId: "DEF789012"
-    },
-    {
-      title: "Tableau Desktop Specialist",
-      issuer: "Tableau",
-      date: "2023",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop",
-      credentialId: "GHI345678"
-    },
-    {
-      title: "Python for Data Science and AI",
-      issuer: "IBM",
-      date: "2022",
+      title: "Programming for Everybody (Getting Started with Python)",
+      issuer: "University of Michigan",
+      date: "2024",
       image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=300&h=200&fit=crop",
-      credentialId: "JKL901234"
+      credentialUrl: "https://www.coursera.org/account/accomplishments/verify/UMCRL8FMKFAM?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
     }
   ];
 
@@ -43,11 +29,11 @@ const Certificates = () => {
             Certificates
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Professional certifications validating expertise in data analysis and related technologies
+            Professional certifications validating expertise in data analysis and programming
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {certificates.map((cert, index) => (
             <div
               key={cert.title}
@@ -58,23 +44,28 @@ const Certificates = () => {
                 <img
                   src={cert.image}
                   alt={cert.title}
-                  className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                <div className="absolute top-2 right-2">
-                  <Award className="w-6 h-6 text-yellow-400" />
+                <div className="absolute top-3 right-3">
+                  <Award className="w-8 h-8 text-yellow-400" />
                 </div>
               </div>
               
-              <div className="p-4">
-                <h3 className="text-sm font-bold text-white mb-2 line-clamp-2">{cert.title}</h3>
-                <p className="text-purple-400 text-sm font-medium mb-1">{cert.issuer}</p>
-                <p className="text-gray-400 text-xs mb-3">{cert.date}</p>
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-white mb-2">{cert.title}</h3>
+                <p className="text-purple-400 text-base font-medium mb-2">{cert.issuer}</p>
+                <p className="text-gray-400 text-sm mb-4">{cert.date}</p>
                 
-                <button className="flex items-center gap-1 text-purple-400 hover:text-purple-300 transition-colors text-xs">
-                  <ExternalLink className="w-3 h-3" />
+                <a
+                  href={cert.credentialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium"
+                >
+                  <ExternalLink className="w-4 h-4" />
                   View Certificate
-                </button>
+                </a>
               </div>
             </div>
           ))}

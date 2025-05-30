@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { Mail, Phone, MessageSquare, Send, Linkedin, Github } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,205 +9,185 @@ const Contact = () => {
     subject: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    // Create mailto link
-    const mailtoLink = `mailto:asifhossain8612@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    
+    const { name, email, subject, message } = formData;
+    const mailtoLink = `mailto:asifhossain8612@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`;
     
     window.location.href = mailtoLink;
-
-    toast({
-      title: "Message sent!",
-      description: "Your email client will open to send the message.",
-    });
-
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
+    setFormData({
+      ...formData,
       [e.target.name]: e.target.value
-    }));
-  };
-
-  const handleWhatsAppClick = () => {
-    const whatsappUrl = `https://wa.me/8801630521697?text=Hi%20Asif,%20I%20would%20like%20to%20discuss%20a%20data%20analysis%20project%20with%20you.`;
-    window.open(whatsappUrl, '_blank');
+    });
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-slate-800/30">
+    <section id="contact" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Get In <span className="text-purple-400">Touch</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Let's discuss how I can help transform your data into actionable insights
+            Ready to turn your data into actionable insights? Let's discuss your project!
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
+          {/* Contact Information */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
-              <p className="text-gray-400 mb-8">
-                Ready to unlock the power of your data? I'm here to help you make data-driven decisions 
-                that drive real business results.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4 animate-fade-in animation-delay-200">
-                <div className="bg-purple-500/20 p-3 rounded-lg">
-                  <Mail className="w-6 h-6 text-purple-400" />
+              <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <p className="text-gray-300 font-medium">Email</p>
+                    <a href="mailto:asifhossain8612@gmail.com" className="text-purple-400 hover:text-purple-300 transition-colors">
+                      asifhossain8612@gmail.com
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-white font-semibold">Email</h4>
-                  <p className="text-gray-400">asifhossain8612@gmail.com</p>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div>
+                    <p className="text-gray-300 font-medium">Phone</p>
+                    <a href="tel:+8801630521697" className="text-purple-400 hover:text-purple-300 transition-colors">
+                      +880 1630 521697
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
+                    <MessageSquare className="w-6 h-6 text-green-400" />
+                  </div>
+                  <div>
+                    <p className="text-gray-300 font-medium">WhatsApp</p>
+                    <a 
+                      href="https://wa.me/8801630521697" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-green-400 hover:text-green-300 transition-colors"
+                    >
+                      +880 1630 521697
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4 animate-fade-in animation-delay-400">
-                <div className="bg-purple-500/20 p-3 rounded-lg">
-                  <Phone className="w-6 h-6 text-purple-400" />
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold">Phone</h4>
-                  <p className="text-gray-400">+8801630521697</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4 animate-fade-in animation-delay-500">
-                <div className="bg-green-500/20 p-3 rounded-lg">
-                  <MessageCircle className="w-6 h-6 text-green-400" />
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold">WhatsApp</h4>
-                  <button 
-                    onClick={handleWhatsAppClick}
-                    className="text-green-400 hover:text-green-300 transition-colors"
+              {/* Social Links */}
+              <div className="mt-8">
+                <h4 className="text-lg font-medium text-white mb-4">Connect with me</h4>
+                <div className="flex gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/md-asif-hossain20/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
                   >
-                    +8801630521697
-                  </button>
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://github.com/MdAsif-Hossain"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-300"
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
                 </div>
-              </div>
-
-              <div className="flex items-center space-x-4 animate-fade-in animation-delay-600">
-                <div className="bg-purple-500/20 p-3 rounded-lg">
-                  <MapPin className="w-6 h-6 text-purple-400" />
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold">Location</h4>
-                  <p className="text-gray-400">Available for remote work worldwide</p>
-                </div>
-              </div>
-
-              {/* WhatsApp Button */}
-              <div className="pt-4">
-                <button
-                  onClick={handleWhatsAppClick}
-                  className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-green-500/25"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  Chat on WhatsApp
-                </button>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="animate-fade-in animation-delay-800">
-            <form onSubmit={handleSubmit} className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700/50">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="animate-fade-in animation-delay-300">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-white font-medium mb-2">
-                    Name *
+                  <label htmlFor="name" className="block text-gray-300 mb-2 font-medium">
+                    Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                    required
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-white font-medium mb-2">
-                    Email *
+                  <label htmlFor="email" className="block text-gray-300 mb-2 font-medium">
+                    Email
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                    placeholder="your@email.com"
+                    required
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                    placeholder="your.email@example.com"
                   />
                 </div>
               </div>
 
-              <div className="mb-6">
-                <label htmlFor="subject" className="block text-white font-medium mb-2">
-                  Subject *
+              <div>
+                <label htmlFor="subject" className="block text-gray-300 mb-2 font-medium">
+                  Subject
                 </label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
-                  required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                  placeholder="Project inquiry"
+                  required
+                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                  placeholder="Project discussion"
                 />
               </div>
 
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-white font-medium mb-2">
-                  Message *
+              <div>
+                <label htmlFor="message" className="block text-gray-300 mb-2 font-medium">
+                  Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  required
-                  rows={5}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors resize-none"
-                  placeholder="Tell me about your project or how I can help..."
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors resize-none"
+                  placeholder="Tell me about your project..."
                 />
               </div>
 
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25 flex items-center justify-center gap-2"
               >
-                {isSubmitting ? (
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Send Message
-                  </>
-                )}
+                <Send className="w-5 h-5" />
+                Send Message
               </button>
             </form>
           </div>
