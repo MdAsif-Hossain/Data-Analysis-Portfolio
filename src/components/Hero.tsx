@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ChevronDown, Linkedin, Github } from 'lucide-react';
+import { ChevronDown, Linkedin, Github, Facebook, Briefcase } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSkills = () => {
@@ -27,20 +27,20 @@ const Hero = () => {
               <img 
                 src="/lovable-uploads/e7752c66-0fbf-4853-b8f8-010318ae68a6.png" 
                 alt="Asif Hossain - Data Analysis Expert"
-                className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-2 border-gray-300 shadow-lg"
+                className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-2xl mx-auto"
               />
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center gap-4 mb-6">
+          <div className="flex justify-center gap-3 mb-6">
             <a
               href="https://www.linkedin.com/in/md-asif-hossain20/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-blue-600/25"
             >
-              <Linkedin className="w-6 h-6" />
+              <Linkedin className="w-5 h-5" />
             </a>
             <a
               href="https://github.com/MdAsif-Hossain"
@@ -48,7 +48,23 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-gray-800/25"
             >
-              <Github className="w-6 h-6" />
+              <Github className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.facebook.com/asifhossain86/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors duration-300 shadow-lg hover:shadow-blue-500/25"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a
+              href="https://profile.indeed.com/?hl=en_US&co=US&from=gnav-homepage"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition-colors duration-300 shadow-lg hover:shadow-indigo-600/25"
+            >
+              <Briefcase className="w-5 h-5" />
             </a>
           </div>
 

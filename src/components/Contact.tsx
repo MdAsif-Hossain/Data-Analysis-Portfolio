@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MessageSquare, Send, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, MessageSquare, Send, Linkedin, Github, Facebook, Briefcase } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -92,7 +92,7 @@ const Contact = () => {
               {/* Social Links */}
               <div className="mt-8">
                 <h4 className="text-lg font-medium text-white mb-4">Connect with me</h4>
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   <a
                     href="https://www.linkedin.com/in/md-asif-hossain20/"
                     target="_blank"
@@ -108,6 +108,22 @@ const Contact = () => {
                     className="p-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-300"
                   >
                     <Github className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/asifhossain86/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300"
+                  >
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://profile.indeed.com/?hl=en_US&co=US&from=gnav-homepage"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-300"
+                  >
+                    <Briefcase className="w-5 h-5" />
                   </a>
                 </div>
               </div>
