@@ -15,7 +15,7 @@ const Certificates = () => {
       title: "Machine Learning Specialization",
       issuer: "DeepLearning.AI",
       date: "2024",
-      image: "public/Screenshot 2025-09-21 212651.png",
+      image: "/Screenshot 2025-09-21 212651.png",
       credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/KQ8UEJW7OHWO?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n"
     }
   ];
