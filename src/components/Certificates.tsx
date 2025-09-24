@@ -3,12 +3,12 @@ import React from 'react';
 import { Award, ExternalLink } from 'lucide-react';
 
 const Certificates = () => {
-  const certificates = [
+   const certificates = [
     {
       title: "Google Data Analytics Professional Certificate",
       issuer: "Google",
       date: "2024",
-      image: "public/Screenshot 2025-09-24 193811.png",
+      image: "/Screenshot 2025-09-24 193811.png",
       credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/2ZF06XQSNIVK?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof"
     },
     {
