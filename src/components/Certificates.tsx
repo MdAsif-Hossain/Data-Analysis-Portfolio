@@ -8,14 +8,14 @@ const Certificates = () => {
       title: "Google Data Analytics Professional Certificate",
       issuer: "Google",
       date: "2024",
-      image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=300&h=200&fit=crop",
+      image: "https://github.com/MdAsif-Hossain/Data-Analysis-Portfolio/blob/main/public/Screenshot%202025-09-24%20193811.png",
       credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/2ZF06XQSNIVK?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof"
     },
     {
       title: "Machine Learning Specialization",
       issuer: "DeepLearning.AI",
       date: "2024",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=300&h=200&fit=crop",
+      image: "https://github.com/MdAsif-Hossain/Data-Analysis-Portfolio/blob/main/public/Screenshot%202025-09-21%20212651.png",
       credentialUrl: "https://www.coursera.org/account/accomplishments/verify/UMCRL8FMKFAM?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
     }
   ];
