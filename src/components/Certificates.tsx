@@ -15,8 +15,8 @@ const Certificates = () => {
       title: "Machine Learning Specialization",
       issuer: "DeepLearning.AI",
       date: "2024",
-      image: "https://github.com/MdAsif-Hossain/Data-Analysis-Portfolio/blob/main/public/Screenshot%202025-09-21%20212651.png",
-      credentialUrl: "https://www.coursera.org/account/accomplishments/verify/UMCRL8FMKFAM?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
+      image: "public/Screenshot 2025-09-21 212651.png",
+      credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/KQ8UEJW7OHWO?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n"
     }
   ];
 
